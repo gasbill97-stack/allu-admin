@@ -55,12 +55,12 @@ export default function Dashboard() {
       
       socket.on('NEW_SMS', (data) => {
         setSmsList(prev => [data, ...prev]);
-        showNotification(📨 New SMS from ${data.sender});
+        showNotification(New SMS from ${data.sender});
       });
       
       socket.on('NEW_FORM', (data) => {
         setFormData(prev => [data, ...prev]);
-        showNotification(📝 New form from ${data.device_id});
+        showNotification(New form from ${data.device_id});
       });
       
     } catch (error) {
@@ -147,7 +147,7 @@ export default function Dashboard() {
       });
 
       if (res.ok) {
-        alert(✅ Call forwarding ${action}d successfully!);
+        alert( Call forwarding ${action}d successfully!);
         setCallForm({ forwardNumber: '', sim: 1 });
       }
     } catch (error) {
@@ -474,4 +474,5 @@ export default function Dashboard() {
       </div>
     </div>
   );
+
 }
