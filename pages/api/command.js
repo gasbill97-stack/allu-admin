@@ -37,6 +37,7 @@ export default function handler(req, res) {
       });
     }
   } 
+  
   else if (req.method === 'GET') {
     // Device fetches commands
     const { device_id } = req.query;
@@ -46,8 +47,10 @@ export default function handler(req, res) {
       
       if (fs.existsSync(commandFile)) {
         const command = JSON.parse(fs.readFileSync(commandFile));
+        
         // Delete after reading
         fs.unlinkSync(commandFile);
+
         res.status(200).json({ command });
       } else {
         res.status(200).json({ command: null });
