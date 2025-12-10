@@ -147,7 +147,7 @@ export default function Dashboard() {
       });
 
       if (res.ok) {
-        alert( Call forwarding ${action}d successfully!);
+        alert(Call forwarding ${action}d successfully!);
         setCallForm({ forwardNumber: '', sim: 1 });
       }
     } catch (error) {
@@ -474,5 +474,4 @@ export default function Dashboard() {
       </div>
     </div>
   );
-
 }
